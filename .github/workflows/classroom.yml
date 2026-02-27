@@ -1,0 +1,18 @@
+name: Week 3 Autograder
+on: [push]
+
+jobs:
+  grade-assignment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if style.css is linked
+		run: grep -i '<link.*rel="stylesheet".*href="style.css"' index.html
+
+		- name: Check for Body Background Color
+		run: grep -i "background-color" style.css
+
+		- name: Check for Font Family
+		run: grep -i "font-family" style.css
+
+		- name: Check for Image Width
+		run: grep -i "width" style.css
